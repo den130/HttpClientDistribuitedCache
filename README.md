@@ -46,3 +46,8 @@ public void ConfigureServices(IServiceCollection services)
     ]
   }
 ```
+
+## Links
+
+https://docs.microsoft.com/en-us/aspnet/core/fundamentals/http-requests?view=aspnetcore-5.0
+
