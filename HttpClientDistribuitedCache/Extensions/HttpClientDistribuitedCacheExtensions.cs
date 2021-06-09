@@ -1,25 +1,24 @@
-﻿using HttpClientDistribuitedCache.Config;
-using HttpClientDistribuitedCache.Models;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using HttpClientDistribuitedCache.Config;
+using HttpClientDistribuitedCache.Models;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 
 namespace HttpClientDistribuitedCache.Extensions
 {
     public static class HttpClientDistribuitedCacheExtensions
-
     {
         public static IServiceCollection AddHttpClientDistribuitedCacheExtensionsServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.Configure<HttpClientDistribuitedCacheConfig>(configuration.GetSection(HttpClientDistribuitedCacheConfig.SectionName));
 
-            services.AddTransient<HttpClientCacheHandler>();
+            services.AddTransient<HttpClientDistribuitedCacheHandler>();
 
             return services;
         }

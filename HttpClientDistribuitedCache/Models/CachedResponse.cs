@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace HttpClientDistribuitedCache.Models
 {
-
     public class CachedResponse
     {
         public HttpStatusCode StatusCoode { get; set; }

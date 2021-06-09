@@ -13,6 +13,6 @@ namespace HttpClientDistribuitedCache.Config
 
         public string RegexPath { get; set; }
 
-        public bool UsePragmaCacheIfExists { get; set; } = true;
+        public bool UseCacheControlHeaderIfExists { get; set; } = false;
     }
 }
