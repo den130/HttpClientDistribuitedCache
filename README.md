@@ -14,6 +14,17 @@ public void ConfigureServices(IServiceCollection services)
     })
     .AddHttpMessageHandler<HttpClientCacheHandler>();
 
+    // Add a IDistribuitedCache implementation service, for example Redis
+    services.AddStackExchangeRedisCache(options =>
+    {
+        options.Configuration = _config["MyRedisConStr"];
+        options.InstanceName = "SampleInstance";
+    });
+    
+
+    // Add a IDistribuitedCache implementation service, for example Memory cache
+    // services.AddDistributedMemoryCache();
+
     ...
 }
 
@@ -50,4 +61,4 @@ public void ConfigureServices(IServiceCollection services)
 ## Links
 
 https://docs.microsoft.com/en-us/aspnet/core/fundamentals/http-requests?view=aspnetcore-5.0
-
+https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed?view=aspnetcore-5.0#distributed-redis-cache
